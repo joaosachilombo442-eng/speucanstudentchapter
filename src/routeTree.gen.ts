@@ -9,27 +9,244 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as IndexRouteImport } from './routes/index'
+import { Route as AboutRouteImport } from './routes/about'
+import { Route as ActivitiesRouteImport } from './routes/activities'
+import { Route as AdminRouteImport } from './routes/admin'
+import { Route as ContactRouteImport } from './routes/contact'
+import { Route as GalleryRouteImport } from './routes/gallery'
+import { Route as MembersRouteImport } from './routes/members'
+import { Route as NewsRouteImport } from './routes/news'
+import { Route as PartnershipsRouteImport } from './routes/partnerships'
+import { Route as ProgramsRouteImport } from './routes/programs'
 
-export interface FileRoutesByFullPath {}
-export interface FileRoutesByTo {}
+const IndexRoute = IndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AboutRoute = AboutRouteImport.update({
+  id: '/about',
+  path: '/about',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ActivitiesRoute = ActivitiesRouteImport.update({
+  id: '/activities',
+  path: '/activities',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AdminRoute = AdminRouteImport.update({
+  id: '/admin',
+  path: '/admin',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ContactRoute = ContactRouteImport.update({
+  id: '/contact',
+  path: '/contact',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const GalleryRoute = GalleryRouteImport.update({
+  id: '/gallery',
+  path: '/gallery',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const MembersRoute = MembersRouteImport.update({
+  id: '/members',
+  path: '/members',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const NewsRoute = NewsRouteImport.update({
+  id: '/news',
+  path: '/news',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PartnershipsRoute = PartnershipsRouteImport.update({
+  id: '/partnerships',
+  path: '/partnerships',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ProgramsRoute = ProgramsRouteImport.update({
+  id: '/programs',
+  path: '/programs',
+  getParentRoute: () => rootRouteImport,
+} as any)
+
+export interface FileRoutesByFullPath {
+  '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/activities': typeof ActivitiesRoute
+  '/admin': typeof AdminRoute
+  '/contact': typeof ContactRoute
+  '/gallery': typeof GalleryRoute
+  '/members': typeof MembersRoute
+  '/news': typeof NewsRoute
+  '/partnerships': typeof PartnershipsRoute
+  '/programs': typeof ProgramsRoute
+}
+export interface FileRoutesByTo {
+  '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/activities': typeof ActivitiesRoute
+  '/admin': typeof AdminRoute
+  '/contact': typeof ContactRoute
+  '/gallery': typeof GalleryRoute
+  '/members': typeof MembersRoute
+  '/news': typeof NewsRoute
+  '/partnerships': typeof PartnershipsRoute
+  '/programs': typeof ProgramsRoute
+}
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
+  '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/activities': typeof ActivitiesRoute
+  '/admin': typeof AdminRoute
+  '/contact': typeof ContactRoute
+  '/gallery': typeof GalleryRoute
+  '/members': typeof MembersRoute
+  '/news': typeof NewsRoute
+  '/partnerships': typeof PartnershipsRoute
+  '/programs': typeof ProgramsRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: never
+  fullPaths:
+    | '/'
+    | '/about'
+    | '/activities'
+    | '/admin'
+    | '/contact'
+    | '/gallery'
+    | '/members'
+    | '/news'
+    | '/partnerships'
+    | '/programs'
   fileRoutesByTo: FileRoutesByTo
-  to: never
-  id: '__root__'
+  to:
+    | '/'
+    | '/about'
+    | '/activities'
+    | '/admin'
+    | '/contact'
+    | '/gallery'
+    | '/members'
+    | '/news'
+    | '/partnerships'
+    | '/programs'
+  id:
+    | '__root__'
+    | '/'
+    | '/about'
+    | '/activities'
+    | '/admin'
+    | '/contact'
+    | '/gallery'
+    | '/members'
+    | '/news'
+    | '/partnerships'
+    | '/programs'
   fileRoutesById: FileRoutesById
 }
-export interface RootRouteChildren {}
-
-declare module '@tanstack/react-router' {
-  interface FileRoutesByPath {}
+export interface RootRouteChildren {
+  IndexRoute: typeof IndexRoute
+  AboutRoute: typeof AboutRoute
+  ActivitiesRoute: typeof ActivitiesRoute
+  AdminRoute: typeof AdminRoute
+  ContactRoute: typeof ContactRoute
+  GalleryRoute: typeof GalleryRoute
+  MembersRoute: typeof MembersRoute
+  NewsRoute: typeof NewsRoute
+  PartnershipsRoute: typeof PartnershipsRoute
+  ProgramsRoute: typeof ProgramsRoute
 }
 
-const rootRouteChildren: RootRouteChildren = {}
+declare module '@tanstack/react-router' {
+  interface FileRoutesByPath {
+    '/': {
+      id: '/'
+      path: '/'
+      fullPath: '/'
+      preLoaderRoute: typeof IndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/about': {
+      id: '/about'
+      path: '/about'
+      fullPath: '/about'
+      preLoaderRoute: typeof AboutRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/activities': {
+      id: '/activities'
+      path: '/activities'
+      fullPath: '/activities'
+      preLoaderRoute: typeof ActivitiesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/admin': {
+      id: '/admin'
+      path: '/admin'
+      fullPath: '/admin'
+      preLoaderRoute: typeof AdminRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/contact': {
+      id: '/contact'
+      path: '/contact'
+      fullPath: '/contact'
+      preLoaderRoute: typeof ContactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/gallery': {
+      id: '/gallery'
+      path: '/gallery'
+      fullPath: '/gallery'
+      preLoaderRoute: typeof GalleryRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/members': {
+      id: '/members'
+      path: '/members'
+      fullPath: '/members'
+      preLoaderRoute: typeof MembersRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/news': {
+      id: '/news'
+      path: '/news'
+      fullPath: '/news'
+      preLoaderRoute: typeof NewsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/partnerships': {
+      id: '/partnerships'
+      path: '/partnerships'
+      fullPath: '/partnerships'
+      preLoaderRoute: typeof PartnershipsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/programs': {
+      id: '/programs'
+      path: '/programs'
+      fullPath: '/programs'
+      preLoaderRoute: typeof ProgramsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+  }
+}
+
+const rootRouteChildren: RootRouteChildren = {
+  IndexRoute: IndexRoute,
+  AboutRoute: AboutRoute,
+  ActivitiesRoute: ActivitiesRoute,
+  AdminRoute: AdminRoute,
+  ContactRoute: ContactRoute,
+  GalleryRoute: GalleryRoute,
+  MembersRoute: MembersRoute,
+  NewsRoute: NewsRoute,
+  PartnershipsRoute: PartnershipsRoute,
+  ProgramsRoute: ProgramsRoute,
+}
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
