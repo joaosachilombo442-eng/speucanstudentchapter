@@ -28,3 +28,7 @@ use the editor.
   own key and store it in Secrets.
 - **Secrets.** Lovable manages them. Do not put secret values in the repo.
 <!-- LOVABLE:END -->
+
+## Project architecture
+- Keep each public content page in its own TanStack file route and share the public shell through reusable UI modules; this preserves direct URLs and page-specific metadata while maintaining a coherent institutional experience.
+- Keep the initial administrative interface and forms explicitly frontend-only until real Lovable Cloud persistence and authorization are requested; this avoids implying that submissions are securely stored or that mock login is real.
