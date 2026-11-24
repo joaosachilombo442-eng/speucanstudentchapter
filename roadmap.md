@@ -1,4 +1,0 @@
-- [ ] Add SPE UCAN brand tokens, official logo, favicon, shared navigation/footer, and homepage.
-- [ ] Build all requested public pages with route metadata, factual placeholders, and responsive interactions.
-- [ ] Build the clearly labeled, non-persistent `/admin` preview and frontend-only forms.
-- [ ] Verify routing, tests, preview, and build diagnostics; remove this roadmap when complete.
